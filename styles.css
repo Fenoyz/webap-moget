@@ -15,7 +15,7 @@
     --text-secondary: #b8c1e0;
     --regular-bg: rgba(0, 255, 136, 0.15);
     --regular-color: #00ff88;
-    /* OTC теперь оранжевый */
+    /* OTC теперь оранжевый вместо синего */
     --otc-bg: rgba(255, 136, 0, 0.15);
     --otc-color: #ff8800;
     --shadow-dark: 0 8px 30px rgba(2, 6, 23, 0.7);
@@ -29,6 +29,24 @@
         Roboto,
         "Segoe UI",
         Arial;
+
+    /* Переменные для светлой темы */
+    --bg-light: #f0f4ff;
+    --panel-light: #ffffff;
+    --card-light: #e6ebf2;
+    --muted-light: #666666;
+    --accent-light-theme: #ff8800;
+    --accent2-light-theme: #ffcc00;
+    --success-light: #00aa55;
+    --danger-light: #cc3333;
+    --warning-light: #ff9900;
+    --glass-light: rgba(255, 255, 255, 0.8);
+    --text-primary-light: #1a1a1a;
+    --text-secondary-light: #4d4d4d;
+    --regular-bg-light: rgba(0, 170, 85, 0.15);
+    --regular-color-light: #00aa55;
+    --otc-bg-light: rgba(255, 136, 0, 0.15);
+    --otc-color-light: #ff8800;
 }
 
 * {
@@ -40,7 +58,7 @@
 html,
 body {
     height: 100%;
-    /* Оранжевые градиенты фона */
+    /* Градиенты фона изменены на оранжевые тона */
     background:
         radial-gradient(
             800px 300px at 10% 10%,
@@ -110,7 +128,81 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 800;
+    /* Тень изменена под оранжевый */
     text-shadow: 0 0 15px rgba(255, 136, 0, 0.3);
+}
+
+/* Language Selector */
+.language-selector-container {
+    position: relative;
+    margin-bottom: 16px;
+    z-index: 11;
+}
+
+.language-trigger {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--panel);
+    border-radius: 20px;
+    padding: 8px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    cursor: pointer;
+    width: fit-content;
+    transition: all 0.2s;
+}
+
+.language-trigger:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 10px rgba(255, 136, 0, 0.3);
+}
+
+.language-flag {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.language-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--panel);
+    border-radius: 12px;
+    padding: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 100;
+    margin-bottom: 8px;
+    min-width: 120px;
+}
+
+.language-dropdown.active {
+    display: flex;
+}
+
+/* Выпадающий список языков (в шапке) */
+.language-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.language-option:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.language-option.active {
+    background: rgba(255, 136, 0, 0.2);
+    border: 1px solid rgba(255, 136, 0, 0.3);
 }
 
 /* Trading Type Selector */
@@ -120,6 +212,7 @@ body {
     border-radius: 12px;
     padding: 4px;
     margin-bottom: 20px;
+    /* Удаляем border */
     z-index: 10;
     position: relative;
     gap: 8px;
@@ -136,18 +229,22 @@ body {
     transition: all 0.2s;
     background: transparent;
     color: var(--muted);
+    /* Удаляем border */
     border: none;
 }
 
 .type-btn.active {
+    /* Удаляем border */
     background: var(--regular-bg);
     color: var(--regular-color);
     box-shadow: 0 0 10px rgba(0, 255, 136, 0.2);
 }
 
 .type-btn.otc.active {
+    /* Удаляем border */
     background: var(--otc-bg);
     color: var(--otc-color);
+    /* Тень изменена под оранжевый */
     box-shadow: 0 0 10px rgba(255, 136, 0, 0.2);
 }
 
@@ -216,6 +313,7 @@ body {
 }
 
 .pair-flag:first-child {
+    /* Градиент изменен на оранжевый через переменные */
     background: linear-gradient(135deg, var(--accent), var(--accent2));
     left: 0;
     z-index: 2;
@@ -420,10 +518,10 @@ body {
 .progress-fill {
     height: 100%;
     width: 0%;
-    background: linear-gradient(to right, var(--accent), var(--accent2));
+    background: linear-gradient(to right, var(--success), #7dffc3);
     border-radius: 4px;
     transition: width 1s linear;
-    box-shadow: 0 0 10px rgba(255, 136, 0, 0.3);
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
 }
 
 .timer-display {
@@ -458,18 +556,15 @@ body {
 }
 
 .btn-primary {
+    /* Градиент изменен на оранжевый */
     background: linear-gradient(to right, var(--accent), var(--accent2));
     color: white;
+    /* Тень изменена на оранжевую */
     box-shadow: 0 6px 20px rgba(255, 136, 0, 0.3);
 }
 
-.btn-primary:hover {
-    box-shadow: 0 8px 25px rgba(255, 136, 0, 0.4);
-    background: linear-gradient(to right, var(--accent-light), var(--accent2));
-    transform: translateY(-2px);
-}
-
 .btn-secondary {
+    /* Градиент изменен на оранжевый */
     background: linear-gradient(
         to right,
         rgba(255, 136, 0, 0.2),
@@ -487,11 +582,16 @@ body {
         rgba(255, 204, 0, 0.3)
     );
     box-shadow: 0 6px 15px rgba(255, 136, 0, 0.2);
-    transform: translateY(-2px);
 }
 
 .btn:hover {
     transform: translateY(-2px);
+}
+
+.btn-primary:hover {
+    /* Тень изменена на оранжевую */
+    box-shadow: 0 8px 25px rgba(255, 136, 0, 0.4);
+    background: linear-gradient(to right, #ff9d33, #ffd633);
 }
 
 /* Loading Overlay */
@@ -605,6 +705,7 @@ body {
 }
 
 .tab.active {
+    /* Фон и тень изменены на оранжевые */
     background: rgba(255, 136, 0, 0.2);
     color: var(--accent);
     box-shadow: 0 0 10px rgba(255, 136, 0, 0.2);
@@ -815,6 +916,7 @@ body {
 
 .selector-trigger:hover {
     border-color: var(--accent);
+    /* Тень изменена на оранжевую */
     box-shadow: 0 0 10px rgba(255, 136, 0, 0.3);
 }
 
@@ -860,6 +962,7 @@ body {
 
 .pair-option-dropdown.active,
 .timeframe-option.active {
+    /* Фон и рамка изменены на оранжевые */
     background: rgba(255, 136, 0, 0.2);
     border: 1px solid rgba(255, 136, 0, 0.3);
 }
@@ -899,6 +1002,9 @@ body {
 .menu-trigger i {
     color: var(--text-secondary);
     font-size: 18px;
+    /* Убедимся, что иконка центрирована */
+    margin: 0;
+    padding: 0;
 }
 
 /* Side Menu */
@@ -967,6 +1073,7 @@ body {
 }
 
 .side-menu-item:hover {
+    /* Фон изменен на оранжевый */
     background: rgba(255, 136, 0, 0.15);
     border-color: var(--accent);
     color: var(--accent);
@@ -1072,6 +1179,26 @@ body {
     gap: 14px;
 }
 
+/* Добавляем к контейнеру модального окна */
+.language-modal .modal-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 8px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* Стили для каждой колонки */
+.language-modal .lang-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    max-width: 200px;
+}
+
 .modal-lang-btn {
     display: flex;
     align-items: center;
@@ -1088,9 +1215,40 @@ body {
 }
 
 .modal-lang-btn:hover {
+    /* Фон изменен на оранжевый */
     background: rgba(255, 136, 0, 0.2);
     border-color: var(--accent);
     color: var(--accent);
+}
+
+/* Модальное окно выбора языка */
+.language-modal .modal-lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--panel);
+    color: var(--text-primary);
+    border-radius: 16px;
+    cursor: pointer;
+    transition:
+        background 0.2s,
+        border-color 0.2s;
+    font-size: 16px;
+    text-align: left;
+}
+
+.language-modal .modal-lang-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--accent);
+}
+
+.language-modal .modal-lang-btn .fi {
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    line-height: 1;
 }
 
 /* Pair Flag History */
@@ -1151,6 +1309,7 @@ body {
 .loading-spinner {
     width: 60px;
     height: 60px;
+    /* Цвета изменены на оранжевые */
     border: 4px solid rgba(255, 136, 0, 0.2);
     border-top-color: #ff8800;
     border-radius: 50%;
@@ -1199,5 +1358,30 @@ body {
 
     .menu-trigger i {
         font-size: 16px;
+    }
+}
+
+/* Steel Shine Text */
+#signalTypeValue {
+    background: linear-gradient(135deg, #a0a0a0, #5a6a7f, #a0a0a0);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: 1px;
+    animation: steelShine 4s ease infinite;
+}
+
+@keyframes steelShine {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
     }
 }
