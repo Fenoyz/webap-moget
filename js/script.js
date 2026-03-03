@@ -34,16 +34,16 @@ const CONFIG = {
         CAD: "ca",
         CHF: "ch",
         NZD: "nz",
-        CNY: "cn",
-        RUB: "ru",
-        PKR: "pk",
-        MXN: "mx",
-        ZAR: "za",
-        AED: "ae",
-        JOD: "jo",
-        SAR: "sa",
-        LBP: "lb",
-        YER: "ye",
+        CNY: "cn", // Chinese Yuan
+        RUB: "ru", // Russian Ruble
+        PKR: "pk", // Pakistani Rupee
+        MXN: "mx", // Mexican Peso
+        ZAR: "za", // South African Rand
+        AED: "ae", // UAE Dirham
+        JOD: "jo", // Jordanian Dinar
+        SAR: "sa", // Saudi Riyal
+        LBP: "lb", // Lebanese Pound
+        YER: "ye", // Yemeni Rial
     },
     DATE_FORMAT_OPTIONS: {
         month: "2-digit",
@@ -53,250 +53,6 @@ const CONFIG = {
         hour: "2-digit",
         minute: "2-digit",
     },
-};
-
-// Translations
-const translations = {
-    texts: {
-        en: {
-            signalType: "Signal Type",
-            regular: "Regular",
-            otc: "OTC",
-            currencyPair: "Currency Pair",
-            timeframe: "Timeframe",
-            accuracy: "Accuracy",
-            currentSignal: "CURRENT SIGNAL",
-            signalProgress: "Signal Progress",
-            getSignal: "GET SIGNAL",
-            resetSignal: "RESET SIGNAL",
-            signals: "SIGNALS",
-            profile: "PROFILE",
-            history: "HISTORY",
-            profileStats: "Profile Statistics",
-            totalSignals: "Total Signals",
-            successful: "Successful",
-            failed: "Failed",
-            successRate: "Success Rate",
-            performanceMetrics: "Performance Metrics",
-            waiting: "Waiting for signal...",
-            chooseLanguage: "Choose Language",
-            switchToLightTheme: "Switch to Light Theme",
-            switchToDarkTheme: "Switch to Dark Theme",
-            loadingTitle: "Analyzing Signal...",
-            loadingSubtitle:
-                "AI is scanning price patterns, volume data, and market indicators to generate the optimal signal.",
-        },
-        ru: {
-            signalType: "Тип сигнала",
-            regular: "Обычный",
-            otc: "OTC",
-            currencyPair: "Валютная пара",
-            timeframe: "Таймфрейм",
-            accuracy: "Точность",
-            currentSignal: "ТЕКУЩИЙ СИГНАЛ",
-            signalProgress: "Прогресс сигнала",
-            getSignal: "ПОЛУЧИТЬ СИГНАЛ",
-            resetSignal: "СБРОСИТЬ СИГНАЛ",
-            signals: "СИГНАЛЫ",
-            profile: "ПРОФИЛЬ",
-            history: "ИСТОРИЯ",
-            profileStats: "Статистика профиля",
-            totalSignals: "Всего сигналов",
-            successful: "Успешных",
-            failed: "Неудачных",
-            successRate: "Процент успеха",
-            performanceMetrics: "Метрики производительности",
-            waiting: "Ожидание сигнала...",
-            chooseLanguage: "Выбрать язык",
-            switchToLightTheme: "Переключить на светлую тему",
-            switchToDarkTheme: "Переключить на тёмную тему",
-            loadingTitle: "Анализ сигнала...",
-            loadingSubtitle:
-                "ИИ сканирует ценовые паттерны, данные об объёмах и рыночные индикаторы для генерации оптимального сигнала.",
-        },
-        hi: {
-            signalType: "सिग्नल प्रकार",
-            regular: "नियमित",
-            otc: "OTC",
-            currencyPair: "मुद्रा जोड़ी",
-            timeframe: "समय सीमा",
-            accuracy: "सटीकता",
-            currentSignal: "वर्तमान सिग्नल",
-            signalProgress: "सिग्नल प्रगति",
-            getSignal: "सिग्नल प्राप्त करें",
-            resetSignal: "सिग्नल रीसेट करें",
-            signals: "सिग्नल",
-            profile: "प्रोफ़ाइल",
-            history: "इतिहास",
-            profileStats: "प्रोफ़ाइल आंकड़े",
-            totalSignals: "कुल सिग्नल",
-            successful: "सफल",
-            failed: "विफल",
-            successRate: "सफलता दर",
-            performanceMetrics: "प्रदर्शन मेट्रिक्स",
-            waiting: "सिग्नल की प्रतीक्षा...",
-            chooseLanguage: "भाषा चुनें",
-            switchToLightTheme: "लाइट थीम पर स्विच करें",
-            switchToDarkTheme: "डार्क थीम पर स्विच करें",
-            loadingTitle: "सिग्नल का विश्लेषण...",
-            loadingSubtitle:
-                "AI इष्टतम सिग्नल उत्पन्न करने के लिए मूल्य पैटर्न, वॉल्यूम डेटा और बाजार संकेतकों को स्कैन कर रहा है।",
-        },
-        ar: {
-            signalType: "نوع الإشارة",
-            regular: "عادي",
-            otc: "OTC",
-            currencyPair: "زوج العملات",
-            timeframe: "الإطار الزمني",
-            accuracy: "الدقة",
-            currentSignal: "الإشارة الحالية",
-            signalProgress: "تقدم الإشارة",
-            getSignal: "احصل على إشارة",
-            resetSignal: "إعادة تعيين الإشارة",
-            signals: "الإشارات",
-            profile: "الملف الشخصي",
-            history: "السجل",
-            profileStats: "إحصائيات الملف الشخصي",
-            totalSignals: "إجمالي الإشارات",
-            successful: "ناجحة",
-            failed: "فاشلة",
-            successRate: "معدل النجاح",
-            performanceMetrics: "مقاييس الأداء",
-            waiting: "في انتظار الإشارة...",
-            chooseLanguage: "اختر اللغة",
-            switchToLightTheme: "التبديل إلى السمة الفاتحة",
-            switchToDarkTheme: "التبديل إلى السمة الداكنة",
-            loadingTitle: "تحليل الإشارة...",
-            loadingSubtitle:
-                "يقوم الذكاء الاصطناعي بفحص أنماط الأسعار وبيانات الحجم ومؤشرات السوق لتوليد الإشارة المثلى.",
-        },
-        uk: {
-            signalType: "Тип сигналу",
-            regular: "Звичайний",
-            otc: "OTC",
-            currencyPair: "Валютна пара",
-            timeframe: "Таймфрейм",
-            accuracy: "Точність",
-            currentSignal: "ПОТОЧНИЙ СИГНАЛ",
-            signalProgress: "Прогрес сигналу",
-            getSignal: "ОТРИМАТИ СИГНАЛ",
-            resetSignal: "СКИНУТИ СИГНАЛ",
-            signals: "СИГНАЛИ",
-            profile: "ПРОФІЛЬ",
-            history: "ІСТОРІЯ",
-            profileStats: "Статистика профілю",
-            totalSignals: "Всього сигналів",
-            successful: "Успішних",
-            failed: "Невдалих",
-            successRate: "Відсоток успіху",
-            performanceMetrics: "Метрики продуктивності",
-            waiting: "Очікування сигналу...",
-            chooseLanguage: "Вибрати мову",
-            switchToLightTheme: "Перемкнути на світлу тему",
-            switchToDarkTheme: "Перемкнути на темну тему",
-            loadingTitle: "Аналіз сигналу...",
-            loadingSubtitle:
-                "ШІ сканує цінові патерни, дані про обсяги та ринкові індикатори для генерації оптимального сигналу.",
-        },
-        es: {
-            signalType: "Tipo de señal",
-            regular: "Regular",
-            otc: "OTC",
-            currencyPair: "Par de divisas",
-            timeframe: "Marco temporal",
-            accuracy: "Precisión",
-            currentSignal: "SEÑAL ACTUAL",
-            signalProgress: "Progreso de la señal",
-            getSignal: "OBTENER SEÑAL",
-            resetSignal: "RESETEAR SEÑAL",
-            signals: "SEÑALES",
-            profile: "PERFIL",
-            history: "HISTORIAL",
-            profileStats: "Estadísticas del perfil",
-            totalSignals: "Señales totales",
-            successful: "Exitosas",
-            failed: "Fallidas",
-            successRate: "Tasa de éxito",
-            performanceMetrics: "Métricas de rendimiento",
-            waiting: "Esperando señal...",
-            chooseLanguage: "Elegir idioma",
-            switchToLightTheme: "Cambiar a tema claro",
-            switchToDarkTheme: "Cambiar a tema oscuro",
-            loadingTitle: "Analizando señal...",
-            loadingSubtitle:
-                "La IA está escaneando patrones de precios, datos de volumen e indicadores del mercado para generar la señal óptima.",
-        },
-    },
-    btnTexts: {
-        en: { buy: "BUY", sell: "SELL", win: "Win", loss: "Loss" },
-        ru: {
-            buy: "ПОКУПКА",
-            sell: "ПРОДАЖА",
-            win: "Победа",
-            loss: "Поражение",
-        },
-        hi: { buy: "खरीदें", sell: "बेचें", win: "जीत", loss: "हार" },
-        ar: { buy: "شراء", sell: "بيع", win: "فوز", loss: "خسارة" },
-        uk: {
-            buy: "КУПІВЛЯ",
-            sell: "ПРОДАЖ",
-            win: "Перемога",
-            loss: "Поразка",
-        },
-        es: { buy: "COMPRAR", sell: "VENDER", win: "Ganar", loss: "Perder" },
-    },
-    getSignalBtnTexts: {
-        en: "GET SIGNAL",
-        ru: "ПОЛУЧИТЬ СИГНАЛ",
-        hi: "सिग्नल प्राप्त करें",
-        ar: "احصل على إشارة",
-        uk: "ОТРИМАТИ СИГНАЛ",
-        es: "OBTENER SEÑAL",
-    },
-    newSignalBtnTexts: {
-        en: "NEW SIGNAL",
-        ru: "НОВЫЙ СИГНАЛ",
-        hi: "नया सिग्नल",
-        ar: "إشارة جديدة",
-        uk: "НОВИЙ СИГНАЛ",
-        es: "NUEVA SEÑAL",
-    },
-    regularPairs: [
-        { code: "EURUSD", name: "EUR/USD" },
-        { code: "GBPUSD", name: "GBP/USD" },
-        { code: "USDJPY", name: "USD/JPY" },
-        { code: "AUDUSD", name: "AUD/USD" },
-        { code: "USDCAD", name: "USD/CAD" },
-        { code: "USDCHF", name: "USD/CHF" },
-        { code: "NZDUSD", name: "NZD/USD" },
-    ],
-    otcPairs: [
-        { code: "EURUSD", name: "EUR/USD OTC" },
-        { code: "GBPUSD", name: "GBP/USD OTC" },
-        { code: "USDJPY", name: "USD/JPY OTC" },
-        { code: "AUDUSD", name: "AUD/USD OTC" },
-        { code: "USDCAD", name: "USD/CAD OTC" },
-    ],
-    regularTimeframes: [
-        { code: "S5", name: "5S" },
-        { code: "S15", name: "15S" },
-        { code: "S30", name: "30S" },
-        { code: "M1", name: "1M" },
-        { code: "M3", name: "3M" },
-        { code: "M5", name: "5M" },
-        { code: "M15", name: "15M" },
-        { code: "M30", name: "30M" },
-        { code: "H1", name: "1H" },
-        { code: "H4", name: "4H" },
-    ],
-    otcTimeframes: [
-        { code: "S5", name: "5S" },
-        { code: "S15", name: "15S" },
-        { code: "S30", name: "30S" },
-        { code: "M1", name: "1M" },
-        { code: "M3", name: "3M" },
-        { code: "M5", name: "5M" },
-    ],
 };
 
 // SELECTORS
@@ -405,6 +161,12 @@ const state = {
 };
 
 // --- HELPER FUNCTIONS ---
+
+/**
+ * Вспомогательная функция для безопасного получения DOM-элемента
+ * @param {string} selector - CSS селектор
+ * @returns {HTMLElement|null} - Найденный элемент или null
+ */
 function getElement(selector) {
     try {
         return document.querySelector(selector);
@@ -414,6 +176,11 @@ function getElement(selector) {
     }
 }
 
+/**
+ * Вспомогательная функция для безопасного получения коллекции DOM-элементов
+ * @param {string} selector - CSS селектор
+ * @returns {NodeList} - Найденная коллекция элементов
+ */
 function getElements(selector) {
     try {
         return document.querySelectorAll(selector);
@@ -423,6 +190,12 @@ function getElements(selector) {
     }
 }
 
+/**
+ * Вспомогательная функция для создания элемента флага
+ * @param {string} flagCode - Код флага (например, 'eu', 'us')
+ * @param {string} gradientColor - CSS градиент для фона
+ * @returns {HTMLDivElement} - Готовый элемент флага
+ */
 function createFlagElement(flagCode, gradientColor) {
     const flagDiv = document.createElement("div");
     flagDiv.className = "pair-flag";
@@ -439,6 +212,10 @@ function createFlagElement(flagCode, gradientColor) {
     return flagDiv;
 }
 
+/**
+ * Вспомогательная функция для получения текущего объекта пары
+ * @returns {Object} - Объект пары
+ */
 function getCurrentPairObject() {
     const pairs =
         state.tradingType === "otc"
@@ -448,6 +225,7 @@ function getCurrentPairObject() {
 }
 
 // --- UPDATE DISPLAY FUNCTIONS ---
+
 function updateDisplay() {
     const pairs =
         state.tradingType === "otc"
@@ -487,9 +265,13 @@ function updateProgress() {
     const timerDisplayEl = getElement(SELECTORS.TIMER_DISPLAY);
     if (progressFillEl) progressFillEl.style.width = `${percent}%`;
     if (progressPercentEl)
-        progressPercentEl.textContent = `${(state.currentPercent || 0).toFixed(2)}%`;
+        progressPercentEl.textContent = `${(state.currentPercent || 0).toFixed(
+            2,
+        )}%`;
     if (timerDisplayEl)
-        timerDisplayEl.textContent = `${formatTime(elapsed)} / ${formatTime(state.timerDuration)}`;
+        timerDisplayEl.textContent = `${formatTime(elapsed)} / ${formatTime(
+            state.timerDuration,
+        )}`;
 }
 
 function updateHistoryDisplay() {
@@ -544,11 +326,16 @@ function updateHistoryDisplay() {
         flagsContainer.appendChild(quoteFlag);
         const detailsContainer = document.createElement("div");
         detailsContainer.className = "history-details";
-        detailsContainer.innerHTML = `<div class="history-pair-name">${signal.pairName}</div><div class="history-time">${dateStr} • ${timeStr} • ${signal.timeframe}</div>`;
+        detailsContainer.innerHTML = `
+            <div class="history-pair-name">${signal.pairName}</div>
+            <div class="history-time">${dateStr} • ${timeStr} • ${signal.timeframe}</div>
+        `;
         pairContainer.appendChild(flagsContainer);
         pairContainer.appendChild(detailsContainer);
         const resultContainer = document.createElement("div");
-        resultContainer.className = `history-result ${signal.result === "win" ? "history-win" : "history-loss"}`;
+        resultContainer.className = `history-result ${
+            signal.result === "win" ? "history-win" : "history-loss"
+        }`;
         resultContainer.textContent = signal.resultSimple;
         item.appendChild(pairContainer);
         item.appendChild(resultContainer);
@@ -557,6 +344,7 @@ function updateHistoryDisplay() {
 }
 
 // --- SETUP FUNCTIONS ---
+
 function setupTradingTypeSelector() {
     const typeButtons = getElements(SELECTORS.TYPE_BUTTONS);
     typeButtons.forEach((btn) => {
@@ -669,6 +457,7 @@ function setupButtons() {
 }
 
 // --- MENU & MODAL SETUP FUNCTIONS ---
+
 function setupMenu() {
     const menuTrigger = getElement(SELECTORS.MENU_TRIGGER);
     const menuClose = getElement(SELECTORS.MENU_CLOSE);
@@ -677,6 +466,7 @@ function setupMenu() {
     const menuChooseLanguage = getElement(SELECTORS.MENU_CHOOSE_LANGUAGE);
     const menuChooseTheme = getElement(SELECTORS.MENU_CHOOSE_THEME);
     if (!menuTrigger || !menuClose || !sideMenu || !menuOverlay) return;
+
     function toggleMenu() {
         sideMenu.classList.toggle("active");
         menuOverlay.classList.toggle("active");
@@ -717,6 +507,7 @@ function setupLanguageModal() {
         console.warn("Не все элементы модального окна языка найдены.");
         return;
     }
+
     setupLanguageModal.show = function () {
         languageModalOverlay.classList.add("active");
         updateModalText();
@@ -761,6 +552,7 @@ function setupThemeToggleInMenu() {
 }
 
 // --- CORE LOGIC FUNCTIONS ---
+
 function updateTime() {
     const now = new Date();
     const hours = now.getHours().toString().padStart(2, "0");
@@ -831,13 +623,17 @@ function updateUIText() {
         performanceLabel.textContent = langTexts.performanceMetrics;
     const directionTextEl = getElement(SELECTORS.DIRECTION_TEXT);
     if (directionTextEl) {
+        // Получаем все возможные переводы "Waiting for signal..."
         const waitingTranslations = Object.values(translations.texts).map(
             (t) => t.waiting,
         );
+        // Проверяем, строго ли текущий текст совпадает с одним из них
         if (waitingTranslations.includes(directionTextEl.textContent.trim())) {
+            // Если да, принудительно обновляем его значением для текущего языка
             directionTextEl.textContent =
                 langTexts.waiting || "Waiting for signal...";
         } else if (
+            // Старая проверка для BUY/SELL
             directionTextEl.textContent === "BUY" ||
             directionTextEl.textContent === "SELL" ||
             directionTextEl.textContent === "ПОКУПКА" ||
@@ -1034,7 +830,15 @@ function populatePairDropdown() {
         });
         const baseIcon = document.createElement("span");
         baseIcon.className = `fi fi-${baseFlagCode}`;
-        baseIcon.style.cssText = `width: 100%; height: 100%; display: block; background-size: cover; background-position: center; background-repeat: no-repeat; color: transparent;`;
+        baseIcon.style.cssText = `
+            width: 100%;
+            height: 100%;
+            display: block;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: transparent;
+        `;
         baseFlag.appendChild(baseIcon);
         const quoteFlag = document.createElement("div");
         quoteFlag.className = "pair-flag-select";
@@ -1055,7 +859,15 @@ function populatePairDropdown() {
         });
         const quoteIcon = document.createElement("span");
         quoteIcon.className = `fi fi-${quoteFlagCode}`;
-        quoteIcon.style.cssText = `width: 100%; height: 100%; display: block; background-size: cover; background-position: center; background-repeat: no-repeat; color: transparent;`;
+        quoteIcon.style.cssText = `
+            width: 100%;
+            height: 100%;
+            display: block;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: transparent;
+        `;
         quoteFlag.appendChild(quoteIcon);
         flagsContainer.appendChild(baseFlag);
         flagsContainer.appendChild(quoteFlag);
@@ -1170,11 +982,15 @@ function formatTime(seconds) {
         const hours = Math.floor(seconds / 3600);
         const mins = Math.floor((seconds % 3600) / 60);
         const secs = seconds % 60;
-        return `${hours}:${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
+        return `${hours}:${mins.toString().padStart(2, "0")}:${secs
+            .toString()
+            .padStart(2, "0")}`;
     } else {
         const mins = Math.floor(seconds / 60);
         const secs = seconds % 60;
-        return `${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
+        return `${mins.toString().padStart(2, "0")}:${secs
+            .toString()
+            .padStart(2, "0")}`;
     }
 }
 
@@ -1514,20 +1330,33 @@ function init() {
 
 document.addEventListener("DOMContentLoaded", init);
 
+/**
+ * Преобразует код таймфрейма (например, "M1", "S15", "H4") в длительность в секундах.
+ * Поддерживаемые префиксы:
+ * - S = секунды
+ * - M = минуты
+ * - H = часы
+ * Примеры: "S5" → 5, "M1" → 60, "H1" → 3600
+ * @param {string} code - код таймфрейма (например, "M5")
+ * @returns {number} - длительность в секундах, по умолчанию 5
+ */
 function getTimeframeDuration(code) {
     if (typeof code !== "string") return 5;
+
     const match = code.match(/^([SMH])(\d+)$/i);
     if (!match) return 5;
+
     const [, unit, valueStr] = match;
     const value = parseInt(valueStr, 10);
     if (isNaN(value) || value <= 0) return 5;
+
     switch (unit.toUpperCase()) {
         case "S":
-            return value;
+            return value; // секунды
         case "M":
-            return value * 60;
+            return value * 60; // минуты → секунды
         case "H":
-            return value * 3600;
+            return value * 3600; // часы → секунды
         default:
             return 5;
     }
